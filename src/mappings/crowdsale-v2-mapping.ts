@@ -5,8 +5,8 @@ import {
   ExtensionCalled as ExtensionCalledEvent,
   ClaimTransferred as ClaimTransferredEvent,
   OwnershipTransferred as OwnershipTransferredEvent,
-  KaliRateSet as KaliRateSetEvent,
-} from '../../generated/KaliDAOcrowdsaleV2/KaliDAOcrowdsaleV2'
+  SportsClubRateSet as SportsClubRateSetEvent,
+} from '../../generated/SportsClubDAOcrowdsaleV2/SportsClubDAOcrowdsaleV2'
 import { createToken, tokenTotalSupply } from '../helpers/token-helpers'
 
 // ExtensionSet
@@ -77,4 +77,4 @@ export function handleClaimTransferred(event: ClaimTransferredEvent): void {}
 export function handleOwnershipTransferred(event: OwnershipTransferredEvent): void {}
 
 // TODO
-export function handleKaliRateSet(event: KaliRateSetEvent): void {}
+export function handleSportsClubRateSet(event: SportsClubRateSetEvent): void {}

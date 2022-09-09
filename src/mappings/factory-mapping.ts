@@ -1,17 +1,17 @@
-import { KaliDAO as KaliDAOTemplate } from '../../generated/templates'
-import { DAOdeployed as DaoDeployedEvent } from '../../generated/KaliDAOFactory/KaliDAOFactory'
+import { SportsClubDAO as SportsClubDAOTemplate } from '../../generated/templates'
+import { DAOdeployed as DaoDeployedEvent } from '../../generated/SportsClubDAOFactory/SportsClubDAOFactory'
 import { DAO, Token, Tribute } from '../../generated/schema'
 import { Bytes } from '@graphprotocol/graph-ts'
-import { KaliDAO } from '../../generated/templates/KaliDAO/KaliDAO'
+import { SportsClubDAO } from '../../generated/templates/SportsClubDAO/SportsClubDAO'
 import { tokenTotalSupply } from '../helpers/token-helpers'
 
 export function handleDAOdeployed(event: DaoDeployedEvent): void {
-  KaliDAOTemplate.create(event.params.kaliDAO)
-  const daoId = event.params.kaliDAO.toHexString()
+  SportsClubDAOTemplate.create(event.params.sportsclubDAO)
+  const daoId = event.params.sportsclubDAO.toHexString()
   const dao = new DAO(daoId)
 
   //
-  const contract = KaliDAO.bind(event.params.kaliDAO)
+  const contract = SportsClubDAO.bind(event.params.sportsclubDAO)
 
   // token
   const tokenId = daoId + '-token'
@@ -20,7 +20,7 @@ export function handleDAOdeployed(event: DaoDeployedEvent): void {
   token.dao = daoId
   token.name = event.params.name
   token.symbol = event.params.symbol
-  token.totalSupply = tokenTotalSupply(event.params.kaliDAO)
+  token.totalSupply = tokenTotalSupply(event.params.sportsclubDAO)
   token.paused = event.params.paused
   token.save()
 
@@ -31,7 +31,7 @@ export function handleDAOdeployed(event: DaoDeployedEvent): void {
   dao.gracePeriod = event.params.govSettings[1]
   dao.quorum = event.params.govSettings[2]
   dao.supermajority = event.params.govSettings[3]
-  dao.address = event.params.kaliDAO
+  dao.address = event.params.sportsclubDAO
   dao.extensions = event.params.extensions.map<Bytes>((ext) => ext as Bytes)
 
   dao.save()

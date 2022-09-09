@@ -3,7 +3,7 @@ import { Crowdsale, Purchase, Token } from '../../generated/schema'
 import {
   ExtensionSet as ExtensionSetEvent,
   ExtensionCalled as ExtensionCalledEvent,
-} from '../../generated/KaliDAOcrowdsaleV1/KaliDAOcrowdsaleV1'
+} from '../../generated/SportsClubDAOcrowdsaleV1/SportsClubDAOcrowdsaleV1'
 import { createToken, tokenTotalSupply } from '../helpers/token-helpers'
 
 // ExtensionSet

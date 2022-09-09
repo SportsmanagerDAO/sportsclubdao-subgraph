@@ -1,5 +1,5 @@
 import { Address, BigInt, log } from '@graphprotocol/graph-ts'
-import { Erc20 } from '../../generated/KaliDAOFactory/Erc20'
+import { Erc20 } from '../../generated/SportsClubDAOFactory/Erc20'
 import { Token } from '../../generated/schema'
 
 export function createToken(dao: Address): Token {

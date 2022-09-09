@@ -1,5 +1,5 @@
 import { Address, BigInt, log } from '@graphprotocol/graph-ts'
-import { KaliDAO } from '../../generated/templates/KaliDAO/KaliDAO'
+import { SportsClubDAO } from '../../generated/templates/SportsClubDAO/SportsClubDAO'
 
 export function validateProposalType(type: i32): string {
   const proposalTypes = [
@@ -21,7 +21,7 @@ export function validateProposalType(type: i32): string {
 }
 
 export function getSupermajority(dao: Address): BigInt {
-  const contract = KaliDAO.bind(dao)
+  const contract = SportsClubDAO.bind(dao)
 
   const supermajority = contract.try_supermajority()
 
@@ -33,7 +33,7 @@ export function getSupermajority(dao: Address): BigInt {
 }
 
 export function getQuorum(dao: Address): BigInt {
-  const contract = KaliDAO.bind(dao)
+  const contract = SportsClubDAO.bind(dao)
 
   const quorum = contract.try_quorum()
 
@@ -45,7 +45,7 @@ export function getQuorum(dao: Address): BigInt {
 }
 
 export function getVotingPeriod(dao: Address): BigInt {
-  const contract = KaliDAO.bind(dao)
+  const contract = SportsClubDAO.bind(dao)
 
   const votingPeriod = contract.try_votingPeriod()
 
@@ -57,7 +57,7 @@ export function getVotingPeriod(dao: Address): BigInt {
 }
 
 export function getDocs(dao: Address): string {
-  const contract = KaliDAO.bind(dao)
+  const contract = SportsClubDAO.bind(dao)
 
   const docs = contract.try_docs()
 
@@ -69,7 +69,7 @@ export function getDocs(dao: Address): string {
 }
 
 export function getVotingPeriodStarts(dao: Address, proposalId: BigInt): BigInt {
-  const contract = KaliDAO.bind(dao)
+  const contract = SportsClubDAO.bind(dao)
 
   const starts = contract.try_proposals(proposalId)
 
@@ -81,7 +81,7 @@ export function getVotingPeriodStarts(dao: Address, proposalId: BigInt): BigInt 
 }
 
 export function getVotingWeight(dao: Address, proposalId: BigInt, voter: Address): BigInt {
-  const contract = KaliDAO.bind(dao)
+  const contract = SportsClubDAO.bind(dao)
 
   const creationTime = contract.try_proposals(proposalId)
   let votingWeight = BigInt.fromI32(0)

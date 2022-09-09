@@ -1,15 +1,15 @@
 specVersion: 0.0.2
-description: KaliDAO
-repository: https://github.com/nerderlyne/kali-subgraph
+description: SportsClubDAO
+repository: https://github.com/nerderlyne/sportsclub-subgraph
 schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum/contract
-    name: KaliDAOFactory
+    name: SportsClubDAOFactory
     network: {{network}}
     source:
       address: '{{address}}'
-      abi: KaliDAOFactory
+      abi: SportsClubDAOFactory
       startBlock: {{startBlock}}
     mapping:
       kind: ethereum/events
@@ -23,8 +23,8 @@ dataSources:
         - Crowdsale
         - Redemption
       abis:
-        - name: KaliDAOFactory
-          file: ./abis/KaliDAOFactory.json
+        - name: SportsClubDAOFactory
+          file: ./abis/SportsClubDAOFactory.json
         - name: Erc20
           file: ./abis/Erc20.json
       eventHandlers:
@@ -33,11 +33,11 @@ dataSources:
       file: ./src/mappings/factory-mapping.ts
     
   - kind: ethereum/contract
-    name: KaliDAOcrowdsaleV1
+    name: SportsClubDAOcrowdsaleV1
     network: {{network}}
     source:
       address: '{{crowdsaleV1.address}}'
-      abi: KaliDAOcrowdsaleV1
+      abi: SportsClubDAOcrowdsaleV1
       startBlock: {{crowdsaleV1.startBlock}}
     mapping:
       kind: ethereum/events
@@ -48,8 +48,8 @@ dataSources:
         - Token
         - Purchase
       abis:
-        - name: KaliDAOcrowdsaleV1
-          file: ./abis/KaliDAOcrowdsaleV1.json
+        - name: SportsClubDAOcrowdsaleV1
+          file: ./abis/SportsClubDAOcrowdsaleV1.json
         - name: Erc20
           file: ./abis/Erc20.json
       eventHandlers:
@@ -60,11 +60,11 @@ dataSources:
       file: ./src/mappings/crowdsale-v1-mapping.ts
 
   - kind: ethereum/contract
-    name: KaliDAOcrowdsaleV2
+    name: SportsClubDAOcrowdsaleV2
     network: {{network}}
     source:
       address: '{{crowdsaleV2.address}}'
-      abi: KaliDAOcrowdsaleV2
+      abi: SportsClubDAOcrowdsaleV2
       startBlock: {{crowdsaleV2.startBlock}}
     mapping:
       kind: ethereum/events
@@ -75,8 +75,8 @@ dataSources:
         - Token
         - Purchase
       abis:
-        - name: KaliDAOcrowdsaleV2
-          file: ./abis/KaliDAOcrowdsaleV2.json
+        - name: SportsClubDAOcrowdsaleV2
+          file: ./abis/SportsClubDAOcrowdsaleV2.json
         - name: Erc20
           file: ./abis/Erc20.json
       eventHandlers:
@@ -88,16 +88,16 @@ dataSources:
           handler: handleClaimTransferred
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
-        - event: KaliRateSet(uint8)
-          handler: handleKaliRateSet
+        - event: SportsClubRateSet(uint8)
+          handler: handleSportsClubRateSet
       file: ./src/mappings/crowdsale-v2-mapping.ts
 
   - kind: ethereum/contract
-    name: KaliDAOtribute
+    name: SportsClubDAOtribute
     network: {{network}}
     source:
       address: '{{tribute.address}}'
-      abi: KaliDAOtribute
+      abi: SportsClubDAOtribute
       startBlock: {{tribute.startBlock}}
     mapping:
       kind: ethereum/events
@@ -106,8 +106,8 @@ dataSources:
       entities:
         - Tribute
       abis:
-        - name: KaliDAOtribute
-          file: ./abis/KaliDAOtribute.json
+        - name: SportsClubDAOtribute
+          file: ./abis/SportsClubDAOtribute.json
         - name: Erc20
           file: ./abis/Erc20.json
       eventHandlers:
@@ -120,11 +120,11 @@ dataSources:
       file: ./src/mappings/tribute-mapping.ts
 
   - kind: ethereum/contract
-    name: KaliDAOredemption
+    name: SportsClubDAOredemption
     network: {{network}}
     source:
       address: '{{redemption.address}}'
-      abi: KaliDAOredemption
+      abi: SportsClubDAOredemption
       startBlock: {{redemption.startBlock}}
     mapping:
       kind: ethereum/events
@@ -133,8 +133,8 @@ dataSources:
       entities:
         - Redemption
       abis:
-        - name: KaliDAOredemption
-          file: ./abis/KaliDAOredemption.json
+        - name: SportsClubDAOredemption
+          file: ./abis/SportsClubDAOredemption.json
       eventHandlers:
         - event: ExtensionSet(indexed address,address[],indexed uint256)
           handler: handleExtensionSet
@@ -146,11 +146,11 @@ dataSources:
           handler: handleTokenRemoved
       file: ./src/mappings/redemption-mapping.ts
 templates:
-  - name: KaliDAO
+  - name: SportsClubDAO
     kind: ethereum/contract
     network: {{network}}
     source:
-      abi: KaliDAO
+      abi: SportsClubDAO
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -161,8 +161,8 @@ templates:
         - Member
         - Proposal
       abis:
-        - name: KaliDAO
-          file: ./abis/KaliDAO.json
+        - name: SportsClubDAO
+          file: ./abis/SportsClubDAO.json
         - name: Erc20
           file: ./abis/Erc20.json
       eventHandlers:

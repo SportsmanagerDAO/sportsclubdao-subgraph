@@ -3,7 +3,7 @@ import {
   NewTributeProposal as NewTributeProposalEvent,
   TributeProposalCancelled as TributeProposalCancelledEvent,
   TributeProposalReleased as TributeProposalReleasedEvent,
-} from '../../generated/KaliDAOtribute/KaliDAOtribute'
+} from '../../generated/SportsClubDAOtribute/SportsClubDAOtribute'
 import { tokenName, tokenSymbol, tokenTotalSupply } from '../helpers/token-helpers'
 import { ZERO_ADDRESS } from '../helpers/constants'
 

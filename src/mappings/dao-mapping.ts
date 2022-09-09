@@ -10,7 +10,7 @@ import {
   Transfer as TransferEvent,
   DelegateVotesChanged as DelegateVotesChangedEvent,
   Approval as ApprovalEvent,
-} from '../../generated/templates/KaliDAO/KaliDAO'
+} from '../../generated/templates/SportsClubDAO/SportsClubDAO'
 import { Token, Member, Proposal, Vote, Delegate, DAO } from '../../generated/schema'
 import { createToken, getBalance } from '../helpers/token-helpers'
 import {
@@ -131,7 +131,7 @@ export function handleVoteCast(event: VoteCastEvent): void {
   vote.save()
 }
 
-// kalidao token events
+// sportsclubdao token events
 export function handleTransfer(event: TransferEvent): void {
   const daoId = event.address.toHexString()
 

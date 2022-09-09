@@ -1,11 +1,11 @@
 import { Quit, Redemption } from '../../generated/schema'
 import {
-  KaliDAOredemption,
+  SportsClubDAOredemption,
   ExtensionSet as ExtensionSetEvent,
   ExtensionCalled as ExtensionCalledEvent,
   TokensAdded as TokensAddedEvent,
   TokensRemoved as TokensRemovedEvent,
-} from '../../generated/KaliDAOredemption/KaliDAOredemption'
+} from '../../generated/SportsClubDAOredemption/SportsClubDAOredemption'
 import { Bytes } from '@graphprotocol/graph-ts'
 import { getRedeemables } from '../helpers/extension-helpers'
 

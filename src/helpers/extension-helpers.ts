@@ -1,8 +1,8 @@
 import { Address, Bytes } from '@graphprotocol/graph-ts'
-import { KaliDAOredemption } from '../../generated/KaliDAOredemption/KaliDAOredemption'
+import { SportsClubDAOredemption } from '../../generated/SportsClubDAOredemption/SportsClubDAOredemption'
 
 export function getRedeemables(dao: Address): Bytes[] {
-  const contract = KaliDAOredemption.bind(dao)
+  const contract = SportsClubDAOredemption.bind(dao)
 
   const redeemables = contract.try_getRedeemables(dao).value
   const redeemablesBytes = redeemables.map<Bytes>((redeemable) => redeemable as Bytes)
