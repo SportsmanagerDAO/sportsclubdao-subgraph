@@ -1,5 +1,5 @@
 {
-  "name": "sportsclubdao",
+  "name": "@sportsclubdao/subgraph",
   "description": "Here lies the subgraph of SportsClubDAO",
   "license": "GPL-3.0-or-later",
   "scripts": {
